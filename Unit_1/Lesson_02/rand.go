@@ -2,14 +2,15 @@
 package main
 
 import (
-  "fmt"
-  "math/rand"
+	"fmt"
+	"math/rand"
 )
 
 func main() {
-  var num = rand.Intn(10) + 1
-  fmt.Println(num)
+	// Random numbers remain the same (beware the Seeding and caching (more advanced stuff))
+	var num = rand.Intn(10) + 1
+	fmt.Println(num)
 
-  num = rand.Intn(10) + 1
-  fmt.Println(num)
+	num = rand.Intn(10) + 1
+	fmt.Println(num)
 }
