@@ -1,5 +1,4 @@
 // malacandra.go
-
 package main
 
 import "fmt"

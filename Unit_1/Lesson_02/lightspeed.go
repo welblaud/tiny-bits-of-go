@@ -1,3 +1,4 @@
+// lightspeed.go
 // How long does it take to get to Mars?
 package main
 
