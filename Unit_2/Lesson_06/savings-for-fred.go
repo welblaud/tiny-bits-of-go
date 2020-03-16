@@ -7,30 +7,28 @@
 package main
 
 import (
-  
-  "fmt"
-  "math/rand"
-
+	"fmt"
+	"math/rand"
 )
 
 func main() {
 
-  piggyBank := 0.0 // initial value
+	piggyBank := 0.0 // initial value
 
-  for piggyBank < 20.00 {
+	for piggyBank < 20.00 {
 
- // Also possible just: switch rand.Intn(2) {
-    switch num := rand.Intn(2); num {
-    case 0:
-      piggyBank += 0.05
-    case 1:
-      piggyBank += 0.10
-    case 2:
-      piggyBank += 0.25
-    }
+		// Also possible just: switch rand.Intn(2) {
+		switch num := rand.Intn(2); num {
+		case 0:
+			piggyBank += 0.05
+		case 1:
+			piggyBank += 0.10
+		case 2:
+			piggyBank += 0.25
+		}
 
-    fmt.Printf("In the piggy is: $%5.2f\n", piggyBank)
+		fmt.Printf("In the piggy is: $%05.2f\n", piggyBank)
 
-  }
+	}
 
 }
