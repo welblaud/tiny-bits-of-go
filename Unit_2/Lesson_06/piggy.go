@@ -1,4 +1,6 @@
 // piggy.go
+// First version of the piggyBank.
+// Here it works with dollars.
 
 package main
 
@@ -9,22 +11,20 @@ import (
 
 func main() {
 
-	var piggyBank float64
-	var nickel = 0.05
-	var dime = 0.10
-	var quarter = 0.25
+	piggyBank := 0
 
-	for piggyBank < 20.0 {
+	for piggyBank%100 == 20 {
 
 		switch rand.Intn(3) {
 		case 0:
-			piggyBank += nickel
+			piggyBank += 5
 		case 1:
-			piggyBank += dime
+			piggyBank += 10
 		case 2:
-			piggyBank += quarter
+			piggyBank += 25
 		}
 
-		fmt.Printf("$ %05.2f\n", piggyBank)
+		fmt.Printf("piggyBank: $%2.f\n", piggyBank%100)
 	}
+
 }
