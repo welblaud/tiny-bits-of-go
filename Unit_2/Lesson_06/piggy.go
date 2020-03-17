@@ -13,18 +13,25 @@ func main() {
 
 	piggyBank := 0
 
-	for piggyBank%100 == 20 {
+	nickel := 5
+	dime := 10
+	quarter := 25
+
+	for piggyBank < 2000 {
 
 		switch rand.Intn(3) {
 		case 0:
-			piggyBank += 5
+			piggyBank += nickel
 		case 1:
-			piggyBank += 10
+			piggyBank += dime
 		case 2:
-			piggyBank += 25
+			piggyBank += quarter
 		}
 
-		fmt.Printf("piggyBank: $%2.f\n", piggyBank%100)
+		dollars := piggyBank / 100
+		cents := piggyBank % 100
+
+		fmt.Printf("piggyBank: $%02d.%02d\n", dollars, cents)
 	}
 
 }
