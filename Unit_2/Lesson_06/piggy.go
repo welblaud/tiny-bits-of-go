@@ -1,6 +1,5 @@
 // piggy.go
-// First version of the piggyBank.
-// Here it works with dollars.
+// #2 version of the piggyBank (in dollars)
 
 package main
 
