@@ -7,6 +7,7 @@ import (
 )
 
 func main() {
+	// all nums in the equations have to be big.Int
 	lightSpeed := big.NewInt(299792)
 	secondsPerDay := big.NewInt(86400)
 
