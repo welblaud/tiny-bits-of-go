@@ -1,4 +1,4 @@
-// chess.go
+// chess-extended.go --> my own
 package main
 
 import "fmt"
