@@ -16,6 +16,7 @@ func main() {
 		{name: "Challenger Memorial Station", lat: -1.9462, long: 354.4734},
 	}
 	for _, loc := range locations {
+		// +v prints all vars
 		fmt.Printf("%+v\n", loc)
 	}
 
