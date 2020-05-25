@@ -34,6 +34,12 @@ func (r report) average() celsius {
 	return r.temperature.average()
 }
 
+// days count the distance between two places (see lesson 22)
+func (l location) days(l2 location) int {
+	// To-do
+	return 5
+}
+
 func main() {
 	bradbury := location{-4.5895, 137.4417}
 	t := temperature{high: -1.0, low: -78.0}
