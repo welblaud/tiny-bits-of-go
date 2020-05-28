@@ -35,7 +35,7 @@ func (c coordinate) decimal() float64 {
 	return sign * (c.d + c.m/60 + c.s/3600)
 }
 
-type locJSON struct {
+type locationJSON struct {
 	Decimal    float64 `json:"decimal"`
 	Dms        string  `json:"dms"`
 	Degrees    float64 `json:"degrees"`
@@ -45,7 +45,7 @@ type locJSON struct {
 }
 
 func (l *location) MarshalJSON() {
-	lat := locJSON{
+	lat := locationJSON{
 		l.lat.decimal(),
 		l.lat.String(),
 		l.lat.d,
@@ -53,7 +53,7 @@ func (l *location) MarshalJSON() {
 		l.lat.s,
 		string(l.lat.h),
 	}
-	long := locJSON{
+	long := locationJSON{
 		l.long.decimal(),
 		l.long.String(),
 		l.long.d,
