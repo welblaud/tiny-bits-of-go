@@ -48,7 +48,7 @@ func (l *location) MarshalJSON() {
 	/* attaching to struct, also possible:
 		 * ... json.MarshalIndent(locationJSON{...
 	     * ... json.MarshalIndent(struct {struct specs}{data} */
-	lat := locationJSON{
+	lat := &locationJSON{
 		l.lat.decimal(),
 		l.lat.String(),
 		l.lat.d,
@@ -56,7 +56,7 @@ func (l *location) MarshalJSON() {
 		l.lat.s,
 		string(l.lat.h),
 	}
-	long := locationJSON{
+	long := &locationJSON{
 		l.long.decimal(),
 		l.long.String(),
 		l.long.d,
@@ -64,11 +64,11 @@ func (l *location) MarshalJSON() {
 		l.long.s,
 		string(l.long.h),
 	}
-	json1, err := json.MarshalIndent(lat, "", "  ")
+	json1, err := json.MarshalIndent(*lat, "", "  ")
 	if err != nil {
 		log.Fatal(err)
 	}
-	json2, err := json.MarshalIndent(long, "", "  ")
+	json2, err := json.MarshalIndent(*long, "", "  ")
 	if err != nil {
 		log.Fatal(err)
 	}
