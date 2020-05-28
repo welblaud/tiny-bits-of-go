@@ -45,6 +45,9 @@ type locationJSON struct {
 }
 
 func (l *location) MarshalJSON() {
+	/* attaching to struct, also possible:
+		 * ... json.MarshalIndent(locationJSON{...
+	     * ... json.MarshalIndent(struct {struct specs}{data} */
 	lat := locationJSON{
 		l.lat.decimal(),
 		l.lat.String(),
@@ -79,5 +82,4 @@ func main() {
 		long: coordinate{135, 54, 0.0, 'E'},
 	}
 	elysium.MarshalJSON()
-
 }
